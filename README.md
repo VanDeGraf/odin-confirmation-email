@@ -1,24 +1,24 @@
-# README
+## Confirmation email
+This project is part of [The Odin Project Curriculum](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/sending-confirmation-emails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
 
-Things you may want to cover:
+_I simplified the task a little by composing it like this:_  
 
-* Ruby version
+Create a form with an email, upon sending a confirmation link, by clicking on which the user would be shown a message about the successful verification of the email authenticity.
 
-* System dependencies
+### Requirements
+* gems:
+    * **rails** >= 6
 
-* Configuration
+### Installation
+* clone repo
+* `cd` into directory
+* run `bundle`
+* migrate database with run `rails db:migrate`
 
-* Database creation
+### Running
+* `rails s` to start server
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Deployment
+TODO
