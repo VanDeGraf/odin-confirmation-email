@@ -5,9 +5,9 @@ class StaticPagesController < ApplicationController
       @user = User.new
     else
       set_user_confirmation_data(@user)
-      # send email with @user.confirmation_token
-      flash[:notice] = "Confirmation E-mail sent"
+      flash.now[:notice] = "Confirmation E-mail will be send"
       @user.save
+      UserMailer.with(user: @user).confirmation_email.deliver!
     end
   end
 
@@ -34,14 +34,14 @@ class StaticPagesController < ApplicationController
     permitted = params.require(:user).permit(:name, :email)
     user = User.new(name: permitted[:name], email: permitted[:email])
     unless user.valid?
-      flash[:alert] = "Form input validation error"
+      flash.now[:alert] = "Form input validation error"
       return nil
     end
 
     founded = User.find_by(email: user.email)
     unless founded.nil?
       if founded.confirmed?
-        flash[:alert] = "E-mail already confirmed!"
+        flash.now[:alert] = "E-mail already confirmed!"
         return nil
       else
         return founded

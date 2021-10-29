@@ -1,0 +1,9 @@
+<h1>Hello, <%= @user.name %></h1>
+<p>
+  You have pressed send confirmation email.<br>
+  Confirmation link expired after: <%= @user.confirmation_expired %>
+</p>
+<p>
+  To confirm email, just follow this link: <a href="<%= @url %>"><%= @url %></a>
+</p>
+<p>Thanks for do this and have a nice day!</p>
