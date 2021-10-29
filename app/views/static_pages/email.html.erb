@@ -1,0 +1,13 @@
+<h1>Confirm your email</h1>
+<%= form_for @user, method: :get, url: root_path do |f| %>
+  <%= f.label :name, "User name" %>
+  <%= f.text_field :name %><br>
+  <%= f.label :email, "E-mail" %>
+  <%= f.email_field :email %><br>
+  <%= f.submit "Send" %>
+<% end %>
+<div>
+  <% flash.each do |msg| %>
+    <div><strong><%= msg[0] %>:</strong> <%= msg[1] %></div>
+  <% end %>
+</div>
