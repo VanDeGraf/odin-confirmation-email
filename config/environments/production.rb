@@ -117,4 +117,17 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  config.action_mailer.default_url_options = { :host => ENV['host'] }
+
+  # Mail configs
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "ssl://smtp.yandex.ru",
+    :port => 465,
+    :user_name => ENV['mail_yandex_login'],
+    :password => ENV['mail_yandex_password'],
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 end
