@@ -125,7 +125,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => "ssl://smtp.yandex.ru",
+    :address => "smtp.yandex.ru",
     :domain => 'yandex.ru',
     :port => 465,
     :user_name => ENV['mail_yandex_login'],
