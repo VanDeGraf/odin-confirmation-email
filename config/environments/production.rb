@@ -128,6 +128,7 @@ Rails.application.configure do
     :user_name => ENV['mail_yandex_login'],
     :password => ENV['mail_yandex_password'],
     :authentication => :plain,
+    :tls => true,
     :enable_starttls_auto => true
   }
 end
